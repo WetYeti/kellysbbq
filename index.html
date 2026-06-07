@@ -55,13 +55,6 @@
             color: white;
             position: relative;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 fill=%22none%22><path d=%22M10 90 Q30 60 50 90 Q70 60 90 90%22 stroke=%22%23D4A017%22 stroke-opacity=%220.08%22 stroke-width=%222%22/></svg>') repeat;
-            pointer-events: none;
-        }
         .hero-content { max-width: 920px; padding: 2rem; position: relative; z-index: 2; }
         .hero h1 { font-size: 4.8rem; margin: 0 0 0.75rem 0; line-height: 1.05; text-shadow: 0 6px 25px rgba(0,0,0,0.65); }
         .tagline { font-size: 2.1rem; font-style: italic; color: var(--accent); margin: 0 0 2rem 0; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
@@ -121,6 +114,22 @@
         .section-title h2 { font-size: 3rem; margin-bottom: 0.75rem; }
 
         footer { background: var(--dark); color: #d4c3a8; text-align: center; padding: 3.5rem 0; }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.2rem; }
+            .tagline { font-size: 1.6rem; }
+            .section { padding: 4rem 0; }
+            .nav-links { display: none; } /* Simple version - can add hamburger later if needed */
+            .photo-grid, .menu-grid { grid-template-columns: 1fr; }
+            .btn { padding: 14px 28px; font-size: 1rem; }
+            .card { padding: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.6rem; }
+            .tagline { font-size: 1.4rem; }
+        }
     </style>
 </head>
 <body>
@@ -162,7 +171,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
                 <div style="font-size: 1.15rem;">
                     <p>Kelly's Country Smokehouse is a true East Texas smokehouse located off the beaten path near Lake Murvaul. What started as Chuck's Country Smoke House has been reimagined with the same love for great BBQ and community.</p>
-                    <p>Owned and operated by Luke, we focus on quality meats, homemade sides, and that small-town hospitality. We also cater private events and special occasions.</p>
+                    <p>Owned and operated by Luke, the focus remains on quality meats, homemade sides, and that small-town hospitality. We also cater private events and special occasions.</p>
                 </div>
                 <div>
                     <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/owners_chamber.jpg" alt="The Team" style="width:100%; border-radius:16px; box-shadow: 0 15px 45px rgba(0,0,0,0.2);">

@@ -17,19 +17,19 @@
         body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--dark); background: var(--light); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
 
-        /* NAV */
+        /* NAV - Solid by default */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
+            background: var(--dark);
             transition: all 0.3s ease;
-            background: transparent;
         }
         nav.scrolled {
-            background: rgba(44, 24, 16, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(44, 24, 16, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         .nav-container {
             max-width: 1200px;
@@ -115,7 +115,7 @@
 
         footer { background: var(--dark); color: #d4c3a8; text-align: center; padding: 3.5rem 0; }
 
-        /* MOBILE RESPONSIVE */
+        /* MOBILE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.2rem; }
             .tagline { font-size: 1.6rem; }
@@ -125,7 +125,7 @@
             .btn { padding: 14px 28px; font-size: 1rem; }
             .card { padding: 2rem; }
 
-            /* Our Story: Image on top on mobile */
+            /* Our Story image on top */
             #story .container > div[style*="grid-template-columns"] {
                 grid-template-columns: 1fr;
             }

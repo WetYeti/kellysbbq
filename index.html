@@ -16,7 +16,7 @@
         * { box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--dark); background: var(--light); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
-        
+
         /* NAV */
         nav {
             position: fixed;
@@ -25,10 +25,11 @@
             right: 0;
             z-index: 100;
             transition: all 0.3s ease;
+            background: transparent;
         }
         nav.scrolled {
-            background: rgba(44, 24, 16, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(44, 24, 16, 0.92);
+            backdrop-filter: blur(12px);
         }
         .nav-container {
             max-width: 1200px;
@@ -38,7 +39,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { color: white; font-size: 1.5rem; font-weight: bold; letter-spacing: 0.5px; }
+        .logo { color: white; font-size: 1.55rem; font-weight: 700; letter-spacing: 1px; }
         .nav-links { display: flex; gap: 2.5rem; }
         .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent); }
@@ -46,7 +47,7 @@
         /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(44, 24, 16, 0.65), rgba(44, 24, 16, 0.65)), url('https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/KellysStorfront.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(44, 24, 16, 0.72), rgba(44, 24, 16, 0.72)), url('https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/KellysStorfront.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,66 +55,72 @@
             color: white;
             position: relative;
         }
-        .hero-content { max-width: 900px; padding: 2rem; }
-        .hero h1 { font-size: 4.5rem; margin: 0 0 1rem 0; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
-        .tagline { font-size: 2rem; font-style: italic; color: var(--accent); margin: 0 0 1.5rem 0; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 fill=%22none%22><path d=%22M10 90 Q30 60 50 90 Q70 60 90 90%22 stroke=%22%23D4A017%22 stroke-opacity=%220.08%22 stroke-width=%222%22/></svg>') repeat;
+            pointer-events: none;
+        }
+        .hero-content { max-width: 920px; padding: 2rem; position: relative; z-index: 2; }
+        .hero h1 { font-size: 4.8rem; margin: 0 0 0.75rem 0; line-height: 1.05; text-shadow: 0 6px 25px rgba(0,0,0,0.65); }
+        .tagline { font-size: 2.1rem; font-style: italic; color: var(--accent); margin: 0 0 2rem 0; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 
-        .section { padding: 6rem 0; }
+        .section { padding: 6.5rem 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
         /* BUTTONS */
         .btn {
-            display: inline-block;
-            padding: 16px 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 38px;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 8px;
         }
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.35);
         }
         .btn-primary:hover {
             background: #a00000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.45);
         }
         .btn-facebook {
             background: #1877F2;
             color: white;
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.35);
         }
         .btn-facebook:hover {
             background: #145DBF;
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        .btn-outline:hover {
-            background: white;
-            color: var(--dark);
+            transform: translateY(-3px);
         }
 
         .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-        .photo-grid img { width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.3s; }
-        .photo-grid img:hover { transform: scale(1.03); }
+        .photo-grid img { width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.18); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .photo-grid img:hover { transform: scale(1.04); }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2rem; }
         .card {
             background: white;
-            padding: 2.25rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0e6d2;
         }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
 
-        footer { background: var(--dark); color: #d4c3a8; text-align: center; padding: 3rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 3rem; margin-bottom: 0.75rem; }
+
+        footer { background: var(--dark); color: #d4c3a8; text-align: center; padding: 3.5rem 0; }
     </style>
 </head>
 <body>
@@ -135,7 +142,9 @@
         <div class="hero-content">
             <h1>KELLY'S COUNTRY<br>SMOKEHOUSE</h1>
             <p class="tagline">Relax, we got this.</p>
-            <p style="font-size: 1.35rem; margin-bottom: 2.5rem; opacity: 0.95;">Voted Best BBQ in Panola County — 3 Years Running</p>
+            <p style="font-size: 1.4rem; margin-bottom: 2.5rem; max-width: 620px; margin-left: auto; margin-right: auto;">
+                Voted Best BBQ in Panola County — 3 Years Running
+            </p>
             
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#visit" class="btn btn-primary">Call to Order</a>
@@ -147,16 +156,16 @@
     <!-- OUR STORY -->
     <section id="story" class="section">
         <div class="container">
-            <div style="max-width: 720px; margin: 0 auto 3rem auto; text-align: center;">
-                <h2 style="font-size: 2.8rem;">Our Story</h2>
+            <div class="section-title">
+                <h2>Our Story</h2>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+                <div style="font-size: 1.15rem;">
                     <p>Kelly's Country Smokehouse is a true East Texas smokehouse located off the beaten path near Lake Murvaul. What started as Chuck's Country Smoke House has been reimagined with the same love for great BBQ and community.</p>
-                    <p>Owned and operated by Luke, the focus remains on quality meats, homemade sides, and that small-town hospitality. We also cater private events and special occasions.</p>
+                    <p>Owned and operated by Luke, we focus on quality meats, homemade sides, and that small-town hospitality. We also cater private events and special occasions.</p>
                 </div>
                 <div>
-                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/owners_chamber.jpg" alt="The Team" style="width:100%; border-radius:16px; box-shadow: 0 15px 40px rgba(0,0,0,0.2);">
+                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/owners_chamber.jpg" alt="The Team" style="width:100%; border-radius:16px; box-shadow: 0 15px 45px rgba(0,0,0,0.2);">
                 </div>
             </div>
         </div>
@@ -165,16 +174,16 @@
     <!-- THE FOOD -->
     <section id="food" class="section" style="background: white;">
         <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">
-                <h2 style="font-size: 2.8rem;">The Food</h2>
-                <p style="font-size: 1.2rem; color: #555;">Slow-smoked the right way. Tender brisket, massive dino ribs, house-made sausages, and creative daily specials.</p>
+            <div class="section-title">
+                <h2>The Food</h2>
+                <p style="max-width: 620px; margin: 0 auto; font-size: 1.2rem; color: #555;">Slow-smoked the right way. Tender brisket, massive dino ribs, house-made sausages, and creative daily specials.</p>
             </div>
             
-            <div class="photo-grid">
+            <div class="photo-grid" style="margin-top: 3rem;">
                 <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/brisket.jpg" alt="Brisket">
                 <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/ribs.jpg" alt="Dino Ribs">
-                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/sausage.jpg" alt="Sausages">
-                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/porkloin.jpg" alt="Pork Loin">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/sausage.jpg" alt="House Sausages">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/porkloin.jpg" alt="Smoked Pork Loin">
             </div>
         </div>
     </section>
@@ -182,24 +191,24 @@
     <!-- MENU -->
     <section id="menu" class="section">
         <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">
-                <h2 style="font-size: 2.8rem;">Menu</h2>
-                <p style="font-size: 1.15rem; color: #555;">Our menu changes with the seasons. Here’s what you can usually find:</p>
+            <div class="section-title">
+                <h2>Menu</h2>
+                <p style="max-width: 620px; margin: 0 auto; font-size: 1.15rem; color: #555;">Our menu changes with the seasons. Here’s what you can usually find:</p>
             </div>
 
             <div class="menu-grid" style="margin-top: 2.5rem;">
                 <div class="card">
                     <h3>Build-A-Plate</h3>
-                    <p style="margin: 1.25rem 0 0 0; line-height: 1.7;">
+                    <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>1 Meat</strong> — $18.70 &nbsp;&nbsp;•&nbsp;&nbsp; <strong>2 Meats</strong> — $20.78<br>
                         <strong>3 Meats</strong> — $22.86 &nbsp;&nbsp;•&nbsp;&nbsp; <strong>Rib Plate</strong> — $18.70
                     </p>
-                    <p style="font-size: 0.95rem; color: #666; margin-top: 1rem;">Includes 2 sides + drink</p>
+                    <p style="font-size: 0.95rem; color: #777; margin-top: 1.25rem;">Includes 2 sides + drink</p>
                 </div>
 
                 <div class="card">
                     <h3>Meat by the Pound</h3>
-                    <p style="margin: 1.25rem 0 0 0; line-height: 1.7;">
+                    <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>Brisket</strong> — $25.98/lb<br>
                         <strong>Pulled Pork</strong> — $19.44/lb<br>
                         <strong>Pork Ribs / Sticky Ribs</strong> — $20.78/lb<br>
@@ -210,7 +219,7 @@
 
                 <div class="card">
                     <h3>Sandwiches</h3>
-                    <p style="margin: 1.25rem 0 0 0; line-height: 1.7;">
+                    <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>Brisket</strong> — $10.98<br>
                         <strong>Pulled Pork</strong> — $7.98<br>
                         <strong>Smokey and the Brisket</strong> — $16.48<br>
@@ -222,18 +231,18 @@
 
                 <div class="card">
                     <h3>Specials &amp; Favorites</h3>
-                    <p style="margin: 1.25rem 0 0 0; line-height: 1.7;">
+                    <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>Loaded Mac &amp; Cheese</strong> — $13.50<br>
-                        <strong>Loaded Potato</strong> — Market Price<br>
-                        <strong>Brisket Nachos</strong> — Market Price<br>
+                        <strong>Loaded Potato</strong> — Market<br>
+                        <strong>Brisket Nachos</strong> — Market<br>
                         <strong>Ox Tail Plate</strong> — $27.95
                     </p>
-                    <p style="font-size: 0.95rem; color: #666; margin-top: 1rem;">Daily specials often include Meat Candy, Texas Twinkies &amp; Truffle Fries.</p>
+                    <p style="font-size: 0.95rem; color: #777; margin-top: 1.25rem;">Daily specials often include Meat Candy, Texas Twinkies &amp; Truffle Fries.</p>
                 </div>
             </div>
 
-            <p style="text-align: center; margin-top: 3rem; font-style: italic; color: #666;">
-                Menu changes with the seasons. Check Facebook or call for today’s offerings.
+            <p style="text-align: center; margin-top: 3rem; font-style: italic; color: #666; font-size: 1.05rem;">
+                Menu changes with the seasons. Check Facebook or call ahead for today’s offerings.
             </p>
         </div>
     </section>
@@ -241,15 +250,15 @@
     <!-- CATERING -->
     <section class="section" style="background: white;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
                 <div>
-                    <h2 style="font-size: 2.6rem; margin-bottom: 1.5rem;">Catering &amp; Private Events</h2>
-                    <p>We cater private events and special occasions. Our mobile smoker trailer and experienced team can bring real East Texas BBQ to your gathering.</p>
+                    <h2 style="font-size: 2.7rem; margin-bottom: 1.5rem;">Catering &amp; Private Events</h2>
+                    <p style="font-size: 1.15rem;">We cater private events and special occasions. Our mobile smoker trailer and experienced team can bring real East Texas BBQ to your gathering.</p>
                     <p>Call us to discuss your event.</p>
-                    <a href="tel:9036900105" class="btn btn-primary" style="margin-top: 1.5rem;">Call for Catering</a>
+                    <a href="tel:9036900105" class="btn btn-primary" style="margin-top: 2rem;">Call for Catering</a>
                 </div>
                 <div>
-                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/wecater.jpg" alt="Catering" style="width:100%; border-radius:16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/wecater.jpg" alt="Catering Trailer" style="width:100%; border-radius:16px; box-shadow: 0 15px 45px rgba(0,0,0,0.18);">
                 </div>
             </div>
         </div>
@@ -258,11 +267,11 @@
     <!-- VISIT -->
     <section id="visit" class="section">
         <div class="container" style="text-align: center;">
-            <h2 style="font-size: 2.8rem;">Visit Kelly's</h2>
-            <p style="font-size: 1.4rem; margin: 1.5rem 0 0.5rem 0;"><strong>4934 FM 1979, Carthage, TX 75633</strong></p>
-            <p style="font-size: 1.8rem; margin-bottom: 2rem;"><strong>(903) 690-0105</strong></p>
+            <h2 style="font-size: 2.9rem;">Visit Kelly's</h2>
+            <p style="font-size: 1.45rem; margin: 1.5rem 0 0.5rem 0;"><strong>4934 FM 1979, Carthage, TX 75633</strong></p>
+            <p style="font-size: 1.9rem; margin-bottom: 2.5rem; font-weight: 600;"><strong>(903) 690-0105</strong></p>
 
-            <p style="max-width: 500px; margin: 0 auto 2rem auto; font-size: 1.15rem;">
+            <p style="max-width: 520px; margin: 0 auto 2.5rem auto; font-size: 1.2rem;">
                 Primarily open Fridays &amp; Saturdays • 4:00 PM – 9:00 PM<br>
                 We often sell out — call ahead
             </p>
@@ -272,11 +281,11 @@
                 <a href="https://www.facebook.com/p/Kellys-Country-Smokehouse-100056765804996" target="_blank" class="btn btn-facebook">Follow on Facebook</a>
             </div>
 
-            <p style="margin-top: 2rem; color: #666;">We post daily specials and updates on Facebook.</p>
+            <p style="margin-top: 2.5rem; color: #666;">We post daily specials and updates on Facebook.</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 Kelly's Country Smokehouse • Carthage, Texas</p>
-            <p style="margin-top: 0.5rem;">
+            <p style="margin-top: 0.75rem;">

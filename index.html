@@ -120,10 +120,18 @@
             .hero h1 { font-size: 3.2rem; }
             .tagline { font-size: 1.6rem; }
             .section { padding: 4rem 0; }
-            .nav-links { display: none; } /* Simple version - can add hamburger later if needed */
+            .nav-links { display: none; }
             .photo-grid, .menu-grid { grid-template-columns: 1fr; }
             .btn { padding: 14px 28px; font-size: 1rem; }
             .card { padding: 2rem; }
+
+            /* Our Story: Image on top on mobile */
+            #story .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr;
+            }
+            #story .container > div[style*="grid-template-columns"] > div:last-child {
+                order: -1;
+            }
         }
 
         @media (max-width: 480px) {

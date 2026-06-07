@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly's Country Smokehouse | Carthage, TX</title>
+    <meta name="description" content="Kelly's Country Smokehouse in Carthage, TX. Real East Texas BBQ. Voted Best in BBQ in Panola County 3 years in a row. Relax, we got this.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap');
+        :root {
+            --primary: #8B0000;
+            --accent: #D4A017;
+            --dark: #2C1810;
+            --light: #F8F4ED;
+        }
+        body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--dark); background: var(--light); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(44, 24, 16, 0.7)), url('https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/KellysStorfront.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content { max-width: 900px; padding: 2rem; }
+        nav { background: var(--dark); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #f0e6d2; text-decoration: none; font-weight: 500; }
+        .section { padding: 5rem 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .photo-grid img { width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(139,0,0,0.1); }
+        .btn { background: var(--primary); color: white; padding: 14px 32px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #a00000; }
+        .btn-facebook { background: #1877F2; }
+        .btn-facebook:hover { background: #145DBF; }
+        .tagline { font-size: 1.8rem; font-style: italic; color: var(--accent); margin: 1rem 0; }
+        footer { background: var(--dark); color: #d4c3a8; text-align: center; padding: 3rem 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">KELLY'S COUNTRY SMOKEHOUSE</div>
+            <div class="nav-links">
+                <a href="#story">Our Story</a>
+                <a href="#food">The Food</a>
+                <a href="#menu">Menu</a>
+                <a href="#visit">Visit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-size: 4.2rem; margin: 0;">KELLY'S COUNTRY SMOKEHOUSE</h1>
+            <p class="tagline">Relax, we got this.</p>
+            <p style="font-size: 1.4rem; margin-top: 1rem;">Voted Best BBQ in Panola County — 3 Years Running</p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#visit" class="btn">Call to Order</a>
+                <a href="https://www.facebook.com/p/Kellys-Country-Smokehouse-100056765804996" target="_blank" class="btn btn-facebook">Follow on Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section id="story" class="section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <p>Kelly's Country Smokehouse is a true East Texas smokehouse located off the beaten path near Lake Murvaul. What started as Chuck's Country Smoke House has been reimagined with the same love for great BBQ and community.</p>
+                    <p>Owned and operated by Luke, the focus remains on quality meats, homemade sides, and that small-town hospitality. We also cater private events and special occasions — just give us a call.</p>
+                </div>
+                <div>
+                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/owners_chamber.jpg" alt="Kelly's Country Smokehouse Team" style="width:100%; border-radius:12px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE FOOD -->
+    <section id="food" class="section" style="background: white;">
+        <div class="container">
+            <h2>The Food</h2>
+            <p style="max-width: 700px; font-size: 1.2rem;">Slow-smoked the right way. From tender brisket and massive dino ribs to house-made sausages and creative specials, everything is made with care.</p>
+            
+            <div class="photo-grid" style="margin-top: 2.5rem;">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/brisket.jpg" alt="Sliced Brisket">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/ribs.jpg" alt="Dino Rib">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/sausage.jpg" alt="House Sausages">
+                <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/porkloin.jpg" alt="Smoked Pork Loin">
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+        <div class="container">
+            <h2>Menu</h2>
+            <p style="margin-bottom: 2rem;">Our menu changes with the seasons and what’s smoking that day. Here’s what you can usually find:</p>
+
+            <div class="menu-grid">
+                <!-- Build a Plate -->
+                <div class="card">
+                    <h3>Build-A-Plate</h3>
+                    <p><strong>1 Meat</strong> — $18.70<br>
+                    <strong>2 Meats</strong> — $20.78<br>
+                    <strong>3 Meats</strong> — $22.86<br>
+                    <strong>Rib Plate</strong> — $18.70</p>
+                    <p style="font-size: 0.95rem; color: #666; margin-top: 1rem;">Includes 2 sides + drink</p>
+                </div>
+
+                <!-- Meats by the Pound -->
+                <div class="card">
+                    <h3>Meat by the Pound</h3>
+                    <p><strong>Brisket</strong> — $25.98/lb<br>
+                    <strong>Pulled Pork</strong> — $19.44/lb<br>
+                    <strong>Pork Ribs</strong> — $20.78/lb<br>
+                    <strong>Sticky Ribs</strong> — $20.78/lb<br>
+                    <strong>Turkey</strong> — $14.99/lb<br>
+                    <strong>Pastrami</strong> — $28.95/lb<br>
+                    <strong>Boudin</strong> — $18.98/lb<br>
+                    <strong>Sausage</strong> — $18.98/lb</p>
+                </div>
+
+                <!-- Sandwiches -->
+                <div class="card">
+                    <h3>Sandwiches</h3>
+                    <p><strong>Brisket</strong> — $10.98<br>
+                    <strong>Pulled Pork</strong> — $7.98<br>
+                    <strong>Smokey and the Brisket</strong> — $16.48<br>
+                    <strong>Foghorn Pulling my Leghorn</strong> — $12.98<br>
+                    <strong>Porky's Revenge</strong> — $11.98<br>
+                    <strong>Reuben</strong> — $16.48 (Thu &amp; Fri only)</p>
+                </div>
+
+                <!-- Specials -->
+                <div class="card">
+                    <h3>Specials &amp; Favorites</h3>
+                    <p><strong>Loaded Mac &amp; Cheese</strong> — $13.50<br>
+                    <strong>Loaded Potato</strong> — Market<br>
+                    <strong>Brisket Nachos</strong> — Market<br>
+                    <strong>Ox Tail Plate</strong> — $27.95</p>
+                    <p style="font-size: 0.95rem; margin-top: 1rem;"><strong>Daily Specials</strong> often include Meat Candy, Texas Twinkies, and Truffle Fries.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #666;">
+                Menu items and prices subject to change. Check Facebook or call ahead for today’s offerings.
+            </p>
+        </div>
+    </section>
+
+    <!-- CATERING -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2>Catering &amp; Private Events</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <p>We cater private events and special occasions. Our mobile smoker trailer and experienced team can bring real East Texas BBQ to your gathering.</p>
+                    <p>Call us to discuss your event.</p>
+                    <a href="tel:9036900105" class="btn">Call for Catering</a>
+                </div>
+                <div>
+                    <img src="https://pub-5eb416e9d12f4c218e56e260a525b8fe.r2.dev/wecater.jpg" alt="Catering Smoker Trailer" style="width:100%; border-radius:12px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIT -->
+    <section id="visit" class="section">
+        <div class="container">
+            <h2>Visit Kelly's</h2>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.3rem;"><strong>4934 FM 1979<br>Carthage, TX 75633</strong></p>
+                <p style="margin: 1.5rem 0; font-size: 1.5rem;"><strong>(903) 690-0105</strong></p>
+                
+                <p><strong>Hours:</strong><br>Primarily Fridays &amp; Saturdays • 4:00 PM – 9:00 PM<br>(We often sell out — call ahead)</p>
+
+                <div style="margin: 2rem 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:9036900105" class="btn">Call Now</a>
+                    <a href="https://www.facebook.com/p/Kellys-Country-Smokehouse-100056765804996" target="_blank" class="btn btn-facebook">Follow on Facebook</a>
+                </div>
+
+                <p style="margin-top: 1rem;">We post daily specials and updates on Facebook — your best source for what’s smoking today.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kelly's Country Smokehouse • Carthage, Texas</p>
+            <p>"Relax, we got this." • Voted Best BBQ in Panola County 3 Years in a Row</p>
+        </div>
+    </footer>
+</body>
+</html>

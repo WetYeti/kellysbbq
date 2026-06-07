@@ -266,7 +266,7 @@
                     <h3>Meat by the Pound</h3>
                     <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>Brisket</strong> — $25.98/lb<br>
-                        <strong>Pulled Pork</strong> — $19.44/lb
+                        <strong>Pulled Pork</strong> — $19.44/lb<br>
                         <strong>Pork Ribs / Sticky Ribs</strong> — $20.78/lb
                         <strong>Turkey</strong> — $14.99/lb &nbsp;&nbsp;•&nbsp;&nbsp; <strong>Pastrami</strong> — $28.95/lb
                         <strong>Boudin / Sausage</strong> — $18.98/lb
@@ -278,7 +278,7 @@
                     <p style="margin: 1.5rem 0 0 0; line-height: 1.8; font-size: 1.05rem;">
                         <strong>Brisket</strong> — $10.98<br>
                         <strong>Pulled Pork</strong> — $7.98<br>
-                        <strong>Smokey and the Brisket</strong> — $16.48
+                        <strong>Smokey and the Brisket</strong> — $16.48<br>
                         <strong>Foghorn Pulling my Leghorn</strong> — $12.98
                         <strong>Porky's Revenge</strong> — $11.98
                         <strong>Reuben</strong> — $16.48 (Thu &amp; Fri only)
@@ -344,4 +344,24 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Kelly's Country Smokehouse • Carthage, Texas</p>
-            <p style="margin-top: 0.75rem;">
+            <p style="margin-top: 0.75rem;"></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('show');
+        }
+
+        // Optional: Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!nav.contains(event.target) && mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
